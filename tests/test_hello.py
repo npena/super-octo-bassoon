@@ -2,7 +2,7 @@
 
 import pytest
 
-from super_octo_bassoon.hello import hello_world, get_version
+from super_octo_bassoon.hello import get_version, hello_world
 
 
 class TestHelloWorld:
@@ -57,6 +57,11 @@ class TestGetVersion:
         import re
 
         version = get_version()
-        # Regex for semantic versioning: major.minor.patch(-prerelease)?(+build)?
-        semver_regex = r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z-.]+)?(?:\+[0-9A-Za-z-.]+)?$"
-        assert re.match(semver_regex, version), f"Version '{version}' does not match semantic versioning"
+        # Regex for semantic versioning:
+        # major.minor.patch(-prerelease)?(+build)?
+        semver_regex = (
+            r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z-.]+)?"  # core + optional prerelease
+            r"(?:\+[0-9A-Za-z-.]+)?$"  # optional build metadata
+        )
+        msg = f"Invalid semantic version: {version}"
+        assert re.match(semver_regex, version), msg

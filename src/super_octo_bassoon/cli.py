@@ -2,7 +2,7 @@
 
 import click
 
-from .hello import hello_world, get_version
+from .hello import get_version, hello_world
 
 
 @click.command()
@@ -23,7 +23,7 @@ def main(name: str, version: bool) -> None:
     if version:
         click.echo(f"super-octo-bassoon version {get_version()}")
         return
-    
+    # Generate greeting (logic in hello module for testability)
     greeting = hello_world(name)
     click.echo(greeting)
 
