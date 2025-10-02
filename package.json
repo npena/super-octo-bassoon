@@ -1,0 +1,28 @@
+{
+  "name": "super-octo-bassoon",
+  "version": "1.0.0",
+  "description": "[![CI/CD Pipeline](https://github.com/npena/super-octo-bassoon/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/npena/super-octo-bassoon/actions) [![codecov](https://codecov.io/gh/npena/super-octo-bassoon/branch/main/graph/badge.svg)](https://codecov.io/gh/npena/super-octo-bassoon) [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://python.org) [![Poetry](https://img.shields.io/badge/poetry-managed-blue.svg)](https://python-poetry.org/)",
+  "main": "commitlint.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npena/super-octo-bassoon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/npena/super-octo-bassoon/issues"
+  },
+  "homepage": "https://github.com/npena/super-octo-bassoon#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0"
+  }
+}
