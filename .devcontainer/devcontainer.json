@@ -1,0 +1,40 @@
+{
+  "name": "super-octo-bassoon Dev",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "builder",
+    "args": {
+      "POETRY_VERSION": "2.0.0" // Project requires Poetry >=2.0.0
+    }
+  },
+  "remoteUser": "root",
+  "postCreateCommand": "poetry install --with dev",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "charliermarsh.ruff",
+        "tamasfe.even-better-toml"
+      ],
+      "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "forwardPorts": [],
+  "mounts": [
+    "type=cache,target=/root/.cache/pip",
+    "type=cache,target=/root/.cache/pypoetry"
+  ],
+  "runArgs": ["--init"],
+  "overrideCommand": false
+}
