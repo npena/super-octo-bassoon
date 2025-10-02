@@ -1,0 +1,17 @@
+# Exclude files not needed in Docker build context
+.git
+.github
+.devcontainer
+__pycache__
+*.py[cod]
+*.egg-info
+.dist
+build
+dist
+.mypy_cache
+.pytest_cache
+.venv
+.idea
+.vscode
+.cache
+*.log
