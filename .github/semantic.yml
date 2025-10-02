@@ -1,0 +1,32 @@
+# Configuration for amannn/action-semantic-pull-request
+# See: https://github.com/amannn/action-semantic-pull-request
+
+# List of allowed types (Conventional Commits)
+types:
+  - build
+  - chore
+  - ci
+  - docs
+  - feat
+  - fix
+  - perf
+  - refactor
+  - revert
+  - style
+  - test
+
+# Allow any scope (leave empty array means no restriction)
+scopes: []
+
+# Require a scope? (false keeps it optional)
+requireScope: false
+
+# Subject (description) must not be empty; regex to allow anything non-whitespace
+subjectPattern: ".+"
+subjectPatternError: "PR title must have a non-empty description after the type/scope."
+
+# Disallow breaking marker outside of ! or footer
+allowBreakingChanges: [feat, fix]
+
+# Disallow merge commits / squash defaults like 'Update README'
+# (Handled implicitly by subjectPattern + type whitelist)

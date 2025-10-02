@@ -198,15 +198,65 @@ poetry run pytest
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
 
+### Commit Message Format
+
+This repository enforces **Conventional Commits** via:
+* A `commit-msg` pre-commit hook (`conventional-pre-commit`) – run `poetry run pre-commit install --hook-type commit-msg` once to enable commit message validation locally.
+* A GitHub Action (`commitlint`) that checks all PR commits.
+* A PR title semantic linter (`amannn/action-semantic-pull-request`) ensuring squash-merge titles stay conventional.
+
+Basic pattern:
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+Common types: `feat`, `fix`, `docs`, `chore`, `refactor`, `ci`, `test`, `build`, `perf`. Use `!` or a `BREAKING CHANGE:` footer to signal breaking changes.
+
+When using squash merge, the PR title becomes the commit message—ensure it passes the same rules (the PR title linter will block otherwise).
+
 ## Release Process
 
-This project uses automated releases via GitHub Actions:
+Automated with [release-please](https://github.com/googleapis/release-please).
 
-1. **Development**: Work on feature branches and merge to `main` via PR
-2. **Versioning**: Update version in `pyproject.toml` and create a git tag
-3. **Release**: Push the tag to trigger automatic building and publishing
+### How It Works
 
-### Creating a Release
+1. Commit using **Conventional Commit** messages (e.g. `feat: add greeting option`, `fix: handle empty name`).
+2. On pushes to `main`, the Release Please workflow evaluates commits since the last release.
+3. If release-worthy changes exist, it opens a "chore(main): release x.y.z" PR containing:
+	- Updated `CHANGELOG.md`
+	- Bumped versions in `pyproject.toml` and `super_octo_bassoon/__init__.py` (`__version__`).
+4. Merge that PR. The workflow then:
+	- Creates a git tag (e.g. `vX.Y.Z`)
+	- Publishes a GitHub Release with notes
+	- Attaches built distribution artifacts
+5. (Optional future step) A separate publish job to PyPI can be added to trigger on the created tag.
+
+You **do not manually bump versions or create tags**—Release Please manages them.
+
+### Conventional Commit Types Parsed
+
+The following types influence semantic versioning:
+- `feat:` → minor bump
+- `fix:` → patch bump
+- `feat!:` / `fix!:` or `!` marker / `BREAKING CHANGE:` footer → major bump
+
+Other allowed types (`docs:`, `chore:`, `refactor:`, `ci:`, `test:`, `build:`, `perf:`) are recorded but don't bump version unless marked breaking.
+
+### Example Flow
+git checkout -b feat/new-greeter
+git commit -m "feat: add excited greeting mode"
+git push origin feat/new-greeter
+# Open PR → get review → merge
+# Release Please opens release PR later → merge → release created automatically
+```
+
+If you need to force a release with only docs/chore changes, add a conventional `fix:` or `feat:` with appropriate scope, or label the release PR manually before merging.
+
+
+### Example Flow (Deprecated)
 
 ```bash
 # Update version in pyproject.toml

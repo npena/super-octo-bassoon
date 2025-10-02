@@ -30,3 +30,11 @@ repos:
     hooks:
       - id: mypy
         additional_dependencies: [types-click]
+
+  # Conventional Commit message validation (commit-msg hook)
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+        args: [--strict]
