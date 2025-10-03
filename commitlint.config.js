@@ -21,7 +21,6 @@ module.exports = {
       'always',
       [
         'feat',
-        'feat!',
         'fix',
         'docs',
         'style',
