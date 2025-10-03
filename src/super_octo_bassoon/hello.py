@@ -19,6 +19,12 @@ get_version()
 get_today_date()
     Convenience wrapper returning today's date as an ISO (YYYY-MM-DD) string.
 
+get_lottery_numbers()
+    Produce a tuple of random lottery-like numbers (5 unique main numbers and
+    one extra) useful for demo / example output. Randomness is intentionally
+    not seeded; callers who require reproducibility should set the relevant
+    random seed prior to invocation.
+
 Design notes
 ------------
 * Keep functions single-purpose and fully type annotated (mypy strict).
