@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "super-octo-bassoon"
-version = "0.3.0"
+version = "0.3.1"
 description = "A hello world Python project"
 authors = ["npena <npena@example.com>"]
 readme = "README.md"
