@@ -1,4 +1,37 @@
-"""Core hello world functionality."""
+"""Greeting and utility helpers.
+
+This module contains small, pure (or near‑pure) helper functions that back the
+library's public surface and CLI. The intent is to keep logic here free of any
+CLI / I/O side effects so functions remain easy to test.
+
+Available functions
+-------------------
+hello_world(name)
+    Return a canonical greeting. Passing ``None`` triggers the special
+    fallback to ``"Hello, World!"`` while an empty string is preserved
+    verbatim (``"Hello, !"``) — this subtle distinction is relied upon by the
+    test-suite; do not change without updating tests and documenting as a
+    breaking change.
+
+get_version()
+    Return the package version string sourced from the top‑level package.
+
+get_today_date()
+    Convenience wrapper returning today's date as an ISO (YYYY-MM-DD) string.
+
+get_lottery_numbers()
+    Produce a tuple of random lottery-like numbers (5 unique main numbers and
+    one extra) useful for demo / example output. Randomness is intentionally
+    not seeded; callers who require reproducibility should set the relevant
+    random seed prior to invocation.
+
+Design notes
+------------
+* Keep functions single-purpose and fully type annotated (mypy strict).
+* Preserve existing return string formats; downstream consumers and tests may
+  rely on them.
+* Avoid adding external dependencies here—standard library only.
+"""
 
 from datetime import date
 from random import randint, sample
