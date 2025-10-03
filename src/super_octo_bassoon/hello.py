@@ -1,8 +1,8 @@
 """Core hello world functionality."""
 
-
 from typing import Optional
 from datetime import date
+
 
 def hello_world(name: Optional[str] = None) -> str:
     """Return a hello world greeting.
