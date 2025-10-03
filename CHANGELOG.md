@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org) and is automated via [release-please](https://github.com/googleapis/release-please).
 
+## [0.2.0](https://github.com/npena/super-octo-bassoon/compare/super-octo-bassoon-v0.1.0...super-octo-bassoon-v0.2.0) (2025-10-03)
+
+
+### Features
+
+* get lottery numbers function added ([#7](https://github.com/npena/super-octo-bassoon/issues/7)) ([efe5df7](https://github.com/npena/super-octo-bassoon/commit/efe5df7eb876f35a96aa371b35b4b1da36a596fa))
+
 ## [0.1.0](https://github.com/npena/super-octo-bassoon/compare/super-octo-bassoon-v0.0.1...super-octo-bassoon-v0.1.0) (2025-10-03)
 
 
