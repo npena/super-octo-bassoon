@@ -58,11 +58,11 @@ LABEL org.opencontainers.image.source="https://github.com/npena/super-octo-basso
 RUN useradd -m appuser
 WORKDIR /app
 
-COPY --from=builder /tmp/wheels /tmp/wheels
+COPY --from=test /tmp/wheels /tmp/wheels
 RUN pip install --no-cache-dir /tmp/wheels/*.whl && rm -rf /tmp/wheels
 
 # Copy source (optional if wheel already contains it; kept for dev transparency)
-COPY --from=builder /app/src /app/src
+COPY --from=test /app/src /app/src
 
 ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PATH="/usr/local/bin:$PATH"
 

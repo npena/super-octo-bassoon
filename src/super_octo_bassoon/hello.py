@@ -1,5 +1,6 @@
 """Core hello world functionality."""
 
+from datetime import date
 from typing import Optional
 
 
@@ -32,3 +33,12 @@ def get_version() -> str:
     from . import __version__
 
     return __version__
+
+
+def get_today_date() -> str:
+    """Return today's date as an ISO string (YYYY-MM-DD).
+
+    Returns:
+        The current date in ISO format.
+    """
+    return date.today().isoformat()
