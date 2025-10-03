@@ -95,3 +95,7 @@ docker-run: ## Run the Dockerized CLI (pass ARGS="--name Python")
 	  $(MAKE) docker-build; \
 	fi
 	docker run --rm $(DOCKER_TAG_VERSION) $(ARGS)
+
+devcontainer: ## Start a development container with mounted volume and shell access
+	docker build --target builder -t $(IMAGE_NAME):devcontainer . --no-cache
+	docker run --rm -it -v "$$(pwd)":/app -w /app $(IMAGE_NAME):devcontainer /bin/bash
