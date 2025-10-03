@@ -1,7 +1,7 @@
 """Core hello world functionality."""
 
-from typing import Optional
 from datetime import date
+from typing import Optional
 
 
 def hello_world(name: Optional[str] = None) -> str:
@@ -31,6 +31,7 @@ def get_version() -> str:
         The version string.
     """
     from . import __version__
+
     return __version__
 
 
