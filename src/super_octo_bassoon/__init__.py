@@ -1,6 +1,6 @@
 """Super Octo Bassoon - A hello world Python package."""
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __author__ = "npena"
 __email__ = "npena@example.com"
 __description__ = "A hello world Python project"
