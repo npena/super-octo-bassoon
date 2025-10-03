@@ -1,7 +1,7 @@
 """Core hello world functionality."""
 
 from typing import Optional
-
+from datetime import date
 
 def hello_world(name: Optional[str] = None) -> str:
     """Return a hello world greeting.
@@ -31,4 +31,14 @@ def get_version() -> str:
     """
     from . import __version__
 
+
     return __version__
+
+
+def get_today_date() -> str:
+    """Return today's date as an ISO string (YYYY-MM-DD).
+
+    Returns:
+        The current date in ISO format.
+    """
+    return date.today().isoformat()
