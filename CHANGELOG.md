@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org) and is automated via [release-please](https://github.com/googleapis/release-please).
 
+## [0.1.0](https://github.com/npena/super-octo-bassoon/compare/super-octo-bassoon-v0.0.1...super-octo-bassoon-v0.1.0) (2025-10-03)
+
+
+### Features
+
+* get today date function added ([a92d1dc](https://github.com/npena/super-octo-bassoon/commit/a92d1dc91b02a18c2f7f0a87de3143803dfd66ab))
+* Hello world app ([0459a33](https://github.com/npena/super-octo-bassoon/commit/0459a33475cec0b01737a4179edc62c28999331f))
+* Hello world app ([0459a33](https://github.com/npena/super-octo-bassoon/commit/0459a33475cec0b01737a4179edc62c28999331f))
+* Hello world app ([e805064](https://github.com/npena/super-octo-bassoon/commit/e805064a5faa04f8099a0b2dbf03fc40ae988135))
+
+
+### Bug Fixes
+
+* pylint issues fixed ([4a1fe30](https://github.com/npena/super-octo-bassoon/commit/4a1fe30ee2cb336879ab2bd3592164d3d1bdd520))
+
 ## [0.0.1] - 2025-10-02
 ### Added
 - Initial release.
