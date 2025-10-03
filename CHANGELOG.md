@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org) and is automated via [release-please](https://github.com/googleapis/release-please).
 
+## [0.3.1](https://github.com/npena/super-octo-bassoon/compare/super-octo-bassoon-v0.3.0...super-octo-bassoon-v0.3.1) (2025-10-03)
+
+
+### Bug Fixes
+
+* hello documentation removed ([#11](https://github.com/npena/super-octo-bassoon/issues/11)) ([ccd2bed](https://github.com/npena/super-octo-bassoon/commit/ccd2bed0d1a336241ff087a30c4f6905392cac8e))
+
 ## [0.3.0](https://github.com/npena/super-octo-bassoon/compare/super-octo-bassoon-v0.2.0...super-octo-bassoon-v0.3.0) (2025-10-03)
 
 
